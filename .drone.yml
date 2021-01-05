@@ -23,4 +23,4 @@ steps:
     SECRET_AGE:
       from_secret: age
   commands:
-    - echo $SECRET_NAME $SECRET_AGE $DRONE_COMMIT
+    - echo $SECRET_NAME $SECRET_AGE $DRONE_BRANCH $DRONE_COMMIT
