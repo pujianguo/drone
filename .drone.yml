@@ -39,9 +39,7 @@ steps:
 
 - name: dingtalk
   image: lddsb/drone-dingtalk-message
-  environment:
-    SECRET_TOKEN:
-      from_secret: token
   settings:
-    token: $SECRET_TOKEN
+    token:
+      from_secret: token
     type: markdown
