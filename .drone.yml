@@ -38,7 +38,7 @@ steps:
     - echo $SECRET_NAME $SECRET_AGE $DRONE_BRANCH $DRONE_COMMIT
 
 - name: dingtalk
-  image: lddsb/drone-dingtalk-message
+  image: guoxudongdocker/drone-dingtalk
   settings:
     token:
       from_secret: token
