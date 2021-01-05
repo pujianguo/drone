@@ -13,7 +13,7 @@ trigger:
 
 steps:
 - name: build
-  image: registry.cn-beijing.aliyuncs.com/wa/node
+  image: node:alpine
   when:
     event: push
     branch: master
