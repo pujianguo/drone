@@ -5,11 +5,11 @@ name: default
 clone:
   depth: 1
 
-# trigger:
-#   branch:
-#     - master
-#   event:
-#     - push
+trigger:
+  branch:
+    - master
+  event:
+    - push
 
 steps:
 - name: test
@@ -36,3 +36,12 @@ steps:
       from_secret: age
   commands:
     - echo $SECRET_NAME $SECRET_AGE $DRONE_BRANCH $DRONE_COMMIT
+
+- name: dingtalk
+  image: lddsb/drone-dingtalk-message
+  environment:
+    SECRET_TOKEN:
+      from_secret: token
+  settings:
+    token: $SECRET_TOKEN
+    type: markdown
