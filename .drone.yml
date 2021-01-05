@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  depth: 1
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
+
+steps:
+- name: build
+  image: registry.cn-beijing.aliyuncs.com/wa/node
+  when:
+    event: push
+    branch: master
+  commands:
+    - echo 'test aaa'
