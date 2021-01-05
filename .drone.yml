@@ -42,6 +42,5 @@ steps:
   settings:
     token:
       from_secret: token
-    message_color: true
-    message_pic: true
-    sha_link: true
+    type: markdown
++   message_color: true
