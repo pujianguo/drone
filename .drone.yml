@@ -1,5 +1,6 @@
 kind: pipeline
 type: docker
+name: default
 
 clone:
   depth: 1
@@ -11,6 +12,18 @@ trigger:
     - push
 
 steps:
+- name: test
+  image: node:alpine
+  when:
+    event: push
+    branch: test
+  environment:
+    SECRET_NAME:
+      from_secret: name
+    SECRET_AGE:
+      from_secret: age
+  commands:
+    - echo $SECRET_NAME $SECRET_AGE $DRONE_BRANCH $DRONE_COMMIT
 - name: build
   image: node:alpine
   when:
