@@ -43,3 +43,4 @@ steps:
     token:
       from_secret: token
     type: markdown
+    message_color: true
