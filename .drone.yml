@@ -17,5 +17,10 @@ steps:
   when:
     event: push
     branch: master
+  environment:
+    SECRET_NAME:
+      from_secret: name
+    SECRET_AGE:
+      from_secret: age
   commands:
-    - echo aaa
+    - echo $SECRET_NAME $SECRET_AGE $DRONE_COMMIT
