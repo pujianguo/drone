@@ -37,10 +37,19 @@ steps:
   commands:
     - echo $SECRET_NAME $SECRET_AGE $DRONE_BRANCH $DRONE_COMMIT
 
-- name: dingtalk
+# - name: dingtalk
+#   image: lddsb/drone-dingtalk-message
+#   settings:
+#     token:
+#       from_secret: token
+#     type: markdown
+# +   message_color: true
+
+name: dingtalk
   image: lddsb/drone-dingtalk-message
   settings:
-    token:
-      from_secret: token
+    token: ef11bb7c9fd4aa2757625ef083f70ba09f1e23f3385c6188481ce841611dd9b1
     type: markdown
-+   message_color: true
+    message_color: true
+    message_pic: true
+    sha_link: true
