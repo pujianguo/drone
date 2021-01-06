@@ -1,2 +1,3 @@
 test:
-	sed -i'' 's/dev/pre/' ./env
+	sed -i'.bak' 's/dev/pre/' ./env
+	rm env.bak
