@@ -13,7 +13,7 @@ clone:
 
 steps:
 - name: test
-  image: node:alpine
+  image: registry.cn-beijing.aliyuncs.com/wa/node
   when:
     event: push
     branch: test
