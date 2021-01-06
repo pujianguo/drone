@@ -1,2 +1,2 @@
 test:
-	sed -i 's/dev/pre/' ./env
+	sed -i "" 's/dev/pre/' ./env
