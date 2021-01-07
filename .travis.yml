@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - 10
+env:
+  - VERSION=1.0.0
+  - HOME=/Users/travis
 before_install:
   - echo 'before_install'
   - echo $TRAVIS_BRANCH
@@ -10,6 +13,7 @@ before_install:
   - echo $TRAVIS_JOB_ID
   - echo $TRAVIS_JOB_NUMBER
   - echo $token
+  - echo $VERSION
 
 #install: true # 直接跳过install
 # install:
