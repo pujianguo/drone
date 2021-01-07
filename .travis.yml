@@ -10,8 +10,8 @@ install:
   - echo 'install2'
 #script: command1 && command2 # command1成功后才执行command2
 script:
-  - 'if [ "$TRAVIS_BRANCH" = "test" ]; then echo 111; fi'
-  - 'if [ "$TRAVIS_BRANCH" = "master" ]; then echo 222; fi'
+  - if [ "$TRAVIS_BRANCH" = "test" ]; then echo 111; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then echo 222; fi
 
 after_success:
   - echo 'after_success1'
