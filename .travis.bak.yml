@@ -6,6 +6,12 @@ sudo: required
 node_js:
   - 10
 
+# 定义一些变量
+env:
+  global:
+    - CAMPFIRE_TOKEN=abc123
+    - TIMEOUT=1000
+
 # 指定缓存模块，可选。缓存可加快编译速度。
 # cache:
 #   directories:
