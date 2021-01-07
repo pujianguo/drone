@@ -1,6 +1,6 @@
 test:
-	sed -i '' 's/dev/pre/' ./env
-	sed -i '' 's/pre/dev/' ./env
+	sed -i "" "s/dev/pre/" ./env
+	sed -i "" "s/pre/dev/" ./env
 
 release:
 	sed -i '' 's/dev/release/' ./env
