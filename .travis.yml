@@ -5,17 +5,15 @@ before_install:
   - echo 'before_install1'
   - echo 'before_install2'
 #install: true # 直接跳过install
-install:
-  - echo 'install1'
-  - echo 'install2'
+# install:
+  # - echo 'install'
 #script: command1 && command2 # command1成功后才执行command2
 script:
   - if [ "$TRAVIS_BRANCH" = "test" ]; then echo 111; fi
   - if [ "$TRAVIS_BRANCH" = "master" ]; then echo 222; fi
 
 after_success:
-  - echo 'after_success1'
-  - echo 'after_success2'
+  - echo 'after_success'
 # jobs:
 #   include:
 #     - stage: test

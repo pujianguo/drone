@@ -1,0 +1,44 @@
+# 指定语言环境
+language: node_js
+# 指定需要sudo权限
+sudo: required
+# 指定node_js版本
+node_js:
+  - 10
+
+# 指定缓存模块，可选。缓存可加快编译速度。
+# cache:
+#   directories:
+#     - node_modules
+
+# 指定只有检测到master分支有变动时才执行任务
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g hexo-cli
+
+# Start: Build Lifecycle
+install:
+  - npm install # 克隆完项目后，安装
+
+script:
+  - npm run test # 生成测试报告
+  - npm run build # 打包生成静态资源
+
+after_script:
+  # 条件判断
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./node_modules/.bin/codecov; fi # 执行完 travis 测试任务无报错后上传报告
+# End: Build LifeCycle
+
+# 最后depoy部署
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN # travis setting 中的环境变量 GITHUB_TOKEN
+  local-dir: ./dist/my-github # 根据情况自定义到静态文件输出目录
+  target-branch: gh-pages # 构建后的静态资源提交到这个分支
+  verbose: true
+  on:
+    branch: master
