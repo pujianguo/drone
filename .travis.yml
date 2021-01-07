@@ -1,7 +1,10 @@
 language: node_js
 node_js:
   - 10
-myVal: 1.1.1
+env:
+  global:
+    - CAMPFIRE_TOKEN=abc123
+    - TIMEOUT=1000
 before_install:
   - echo 'before_install'
   - echo $TRAVIS_BRANCH
@@ -11,7 +14,7 @@ before_install:
   - echo $TRAVIS_JOB_ID
   - echo $TRAVIS_JOB_NUMBER
   - echo $token
-  - echo $myVal
+  - echo $CAMPFIRE_TOKEN
 
 #install: true # 直接跳过install
 # install:
