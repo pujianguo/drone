@@ -14,6 +14,16 @@ script:
 after_success:
   - echo 'after_success1'
   - echo 'after_success2'
-branches:
-  only:
-    - master
+jobs:
+  include:
+    - stage: test
+      script: echo '1'
+    - stage: build
+      script: echo '2'
+      if: (branch = test) AND (NOT(type IN (push, pull_request)))
+    - stage: deploy
+      script: echo '2'
+      if: (branch = test) AND (NOT(type IN (push, pull_request)))
+# branches:
+#   only:
+#     - master
