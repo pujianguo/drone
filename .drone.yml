@@ -5,11 +5,11 @@ name: default
 clone:
   depth: 1
 
-# trigger:
-#   branch:
-#     - master
-#   event:
-#     - push
+trigger:
+  branch:
+    - master
+  event:
+    - pull_push
 
 steps:
 - name: test
