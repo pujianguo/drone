@@ -9,7 +9,7 @@ install:
   - echo 'install1'
   - echo 'install2'
 script:
-  - npm run test
+  - echo 'npm run'
 #script: command1 && command2 # command1成功后才执行command2
 after_success:
   - echo 'after_success1'
