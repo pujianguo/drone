@@ -6,12 +6,10 @@ env:
     - CAMPFIRE_TOKEN=abc123
     - TIMEOUT=1000
 
-default-db:
-  port: 3306
-
 before_install:
-  - echo 'aaa'${default-db.port}
   - echo 'before_install'
+  - echo $USER
+  - echo $HOME
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_COMMIT
   - echo $TRAVIS_COMMIT_RANGE
