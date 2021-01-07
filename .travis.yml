@@ -2,8 +2,7 @@ language: node_js
 node_js:
   - 10
 env:
-  - VERSION=1.0.0
-  - HOME=/Users/travis
+  - VERSION=1.0.0 PATH=\home\tmp
 before_install:
   - echo 'before_install'
   - echo $TRAVIS_BRANCH
