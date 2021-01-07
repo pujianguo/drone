@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 10
+before_install:
+  - echo 'before_install1'
+  - echo 'before_install2'
+#install: true # 直接跳过install
+install:
+  - echo 'install1'
+  - echo 'install2'
+script:
+  - npm run test
+#script: command1 && command2 # command1成功后才执行command2
+after_success:
+  - echo 'after_success1'
+  - echo 'after_success2'
